@@ -3,6 +3,7 @@ import { Button } from "./components/groups-overview/Buttons";
 import { List } from "./components/groups-overview/List"
 import { Plus } from "lucide-react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CreateNewGroup } from "./pages/createNewGroup";
 
 function App() {
   return (

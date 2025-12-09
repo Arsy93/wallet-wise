@@ -1,4 +1,5 @@
 import type { ComponentProps, ReactNode } from "react"; 
+import { Link } from "react-router-dom";
 
 interface ButtonProps extends ComponentProps<"button"> {
     name: string;
@@ -14,8 +15,10 @@ export const Button = ({ name, isActive, variant, plusIcon, ...props }: ButtonPr
      let inactiveStyle = "bg-gray-200 text-gray-700 hover:bg-gray-300 ";
     return (
         <button className={baseStyle + (isActive ? activeStyle : inactiveStyle)} {...props} >
+            <Link to="/create-group">
             {plusIcon}
             {name}
+            </Link>
         </button>
     )
-}
+};
