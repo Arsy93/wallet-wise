@@ -1,0 +1,21 @@
+import type { ComponentProps, ReactNode } from "react"; 
+
+interface ButtonProps extends ComponentProps<"button"> {
+    name: string;
+    isActive: boolean;
+    variant: "hey" | "ho"; //this might be duplicative
+    plusIcon: ReactNode;
+}
+export const Button = ({ name, isActive, variant, plusIcon, ...props }: ButtonProps) => {
+    // Insert Base Stylings for Tailwind CSS, Create Variants for active / inactive css
+    // baseStyle / isActiveStyle / inactiveStyle
+     let baseStyle = "px-4 py-2 rounded-md font-semibold transition-colors duration-300 ";
+     let activeStyle = "bg-blue-500 text-white hover:bg-blue-600 ";
+     let inactiveStyle = "bg-gray-200 text-gray-700 hover:bg-gray-300 ";
+    return (
+        <button className={baseStyle + (isActive ? activeStyle : inactiveStyle)} {...props} >
+            {plusIcon}
+            {name}
+        </button>
+    )
+}
